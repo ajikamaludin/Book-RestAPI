@@ -1,0 +1,34 @@
+version: "3.7"
+services:
+  postgresql:
+    image: postgres:14-alpine3.17
+    container_name: grace-postgres
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ./database:/database
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: password
+    mem_limit: 512m
+    mem_reservation: 128M
+    cpus: 0.5
+    networks:
+      grace:
+        ipv4_address: 10.14.99.99
+  
+volumes:
+  postgres:
+    driver: local
+
+networks:
+  grace:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+          - subnet: 10.14.99.0/24
+            gateway: 10.14.99.1
