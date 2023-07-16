@@ -6,19 +6,19 @@ this a simple rest app and cli app to manage books and collections of books
 
 [Collection](./GRACE.postman_collection.json)
 
-## How to run the Rest Api
+## RUN REST API
 
 ```bash
 go run main.go
 ```
 
-## How to run the Command Line App
+## Command_Line App
 
 ```bash
 go run command/main.go
 ```
 
-## How to run the unit test / integration test
+## Unit Test
 
 ```bash
 go test -v
