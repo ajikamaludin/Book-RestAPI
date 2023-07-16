@@ -14,6 +14,8 @@ this a simple rest app and cli app to manage books and collections of books
 
 [Collection](./GRACE.postman_collection.json)
 
+how to use it ? , download json file, open postman , click import and choose downloaded file
+
 ## RUN REST API
 
 ```bash
